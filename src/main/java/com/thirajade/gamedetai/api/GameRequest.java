@@ -1,6 +1,7 @@
 package com.thirajade.gamedetai.api;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -38,19 +39,33 @@ public class GameRequest {
 			String gameReleaseDate = (String) jsonObject.get("released");
 			String gameImageURL = (String) jsonObject.get("background_image");
 			Long metacriticScore = (Long) jsonObject.get("metacritic");
-			gameDetailModel = new GameDetailModel(id,
+			ArrayList<Object> platforms = (ArrayList<Object>) jsonObject.get("platforms");
+			ArrayList<Object> genres = (ArrayList<Object>) jsonObject.get("genres");
+			Object gameVideoURL = (Object) jsonObject.get("clip");
+			ArrayList<Object> gameDevelopers = (ArrayList<Object>) jsonObject.get("developers");
+			ArrayList<Object> gamePublishers = (ArrayList<Object>) jsonObject.get("publishers");
+			ArrayList<Object> gameTags = (ArrayList<Object>) jsonObject.get("tags");
+
+			gameDetailModel = new GameDetailModel(
+					id,
 					slug,
 					gameName,
 					gameDescription,
 					gameDescription_raw,
 					gameReleaseDate,
 					gameImageURL,
-					metacriticScore);
+					metacriticScore,
+					platforms,
+					genres,
+					gameVideoURL,
+					gameDevelopers,
+					gamePublishers,
+					gameTags);
+
 		} catch (IOException | ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public GameDetailModel getGameDetailModel() {
