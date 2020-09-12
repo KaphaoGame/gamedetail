@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class GameDetailController {
-	
+
 	GameRequest gameRequest = new GameRequest("valorant");
-	
+
 	@RequestMapping("/gameDetail")
 	public GameRequest getAllGameRequest(){
-	    return gameRequest;
+		return gameRequest;
 	}
 
 	@GetMapping(value = "/gameDetail")
