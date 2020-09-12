@@ -18,6 +18,7 @@ public class GameDetailModel {
 	private List<Object> gamePublishers;
 	private List<Object> gameTags;
 
+
 	public GameDetailModel(Long id, String slug, String gameName, String gameDescription, String gameDescription_raw,
 						   String gameReleaseDate, String gameImageURL, Long metacriticScore, List<Object> platforms,
 						   List<Object> genres, Object gameVideoURL, List<Object> gameDevelopers,
